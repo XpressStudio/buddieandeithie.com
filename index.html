@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Your Perfect Wood Craft</title>
+    <title>Buddie and Eithie | Creative Processes, Mistakes, and Experiments</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,14 +13,56 @@
     <img src="BE-Logo.png" alt="BE Logo" class="nav-logo">
   </div>
 
-  <nav class="glass-menu-bar">
-    <a href="#home" class="menu-link active">Home</a>
-    <a href="#product" class="menu-link">Product</a>
-    <a href="#about" class="menu-link">About</a>
-    <a href="#contact" class="menu-link">Contact</a>
-  </nav>
+  <nav class="glass-menu-bar" id="mainMenu" aria-label="Main navigation">
+  <a href="#home" class="menu-link active">Home</a>
+  <div class="menu-item has-dropdown">
+    <a href="#fashion" class="menu-link" aria-haspopup="true">Fashion <svg class="menu-caret" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="submenu" role="menu">
+      <span class="submenu-code">LAKUNA</span>
+      <span class="submenu-item" role="menuitem">Fashion Designs</span>
+      <span class="submenu-item" role="menuitem">Fashion Accessories</span>
+      <span class="submenu-item" role="menuitem">Interior Designs</span>
+      <span class="submenu-item" role="menuitem">Handmade Items</span>
+    </div>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="#creative-products" class="menu-link" aria-haspopup="true">Creative Products <svg class="menu-caret" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="submenu" role="menu">
+      <span class="submenu-code">ORU</span>
+      <span class="submenu-item" role="menuitem">Customised Trophies</span>
+      <span class="submenu-item" role="menuitem">Appreciation Gifts</span>
+      <span class="submenu-item" role="menuitem">Name Boards/Signage</span>
+      <span class="submenu-item" role="menuitem">Company Accessories</span>
+    </div>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="#arts-crafts" class="menu-link" aria-haspopup="true">Arts and Crafts <svg class="menu-caret" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="submenu" role="menu">
+      <span class="submenu-code">DAYU</span>
+      <span class="submenu-item" role="menuitem">Wood Engravings</span>
+      <span class="submenu-item" role="menuitem">Sculptures</span>
+      <span class="submenu-item" role="menuitem">Clay Products</span>
+      <span class="submenu-item" role="menuitem">3D Printed Designs</span>
+    </div>
+  </div>
+  <div class="menu-item has-dropdown">
+    <a href="#research-education" class="menu-link" aria-haspopup="true">Research and Education <svg class="menu-caret" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="submenu" role="menu">
+      <span class="submenu-code">BINDU</span>
+      <span class="submenu-item" role="menuitem">Publishing</span>
+      <span class="submenu-item" role="menuitem">Research and Development</span>
+      <span class="submenu-item" role="menuitem">Educational Activities</span>
+    </div>
+  </div>
+  <a href="#services" class="menu-link">Services</a>
+  <a href="#process" class="menu-link">Process</a>
+  <a href="#contact" class="menu-link">Contact</a>
+</nav>
 
   <div class="nav-actions">
+    <button class="action-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainMenu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
     <button class="action-btn" aria-label="Search">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
     </button>
@@ -62,10 +104,10 @@
     </div>
 </div>
     
-<div class="content main-hero">
+<div class="content main-hero" id="home">
     <div class="text-group">
-        <h1 class="hero-title">Discover Your</h1>
-        <h2 class="hero-subtitle">Perfect Wood Craft</h2>
+        <h1 class="hero-title">Buddie and Eithie</h1>
+        <h2 class="hero-subtitle">Creative Processes, Mistakes, and Experiments</h2>
     </div>
     
     <div class="hero-image-wrapper">
@@ -81,6 +123,91 @@
         <button class="glass-pill-btn">Corporate Exhibits</button>
     </div>
 </div>
+
+<!-- ===================== OUR STORY ===================== -->
+<section id="story" class="story-section">
+  <div class="story-card">
+    <span class="story-quote-mark" aria-hidden="true">&ldquo;</span>
+
+    <div class="story-main">
+      <span class="section-tag">Our Story</span>
+      <h3 class="story-lead">Buddie and Eithie was conceived as <em>a dream.</em></h3>
+      <p class="story-text">A dream of two childhood friends who loved <span class="hl">arts</span>, <span class="hl">poetry</span>, <span class="hl">crafts</span>, <span class="hl">designs</span>, and <span class="hl">storytelling</span>.</p>
+    </div>
+
+    <div class="story-stat">
+      <div class="stat-number">25<span>+</span></div>
+      <div class="stat-label">years together</div>
+      <p>Together, we have more than 25 years of experience in various creative and imaginative activities in Sri Lanka and beyond.</p>
+    </div>
+
+    <div class="story-joy">
+      <p>In a world that is filled with chaos, disasters, and uncertainties, we want to bring <em>joy</em> to all who come in contact with us.</p>
+    </div>
+
+    <div class="story-collab">
+      <div class="collab-pills">
+        <span class="collab-pill">We listen</span>
+        <span class="collab-pill">We learn</span>
+        <span class="collab-pill">We collaborate</span>
+      </div>
+      <p class="story-text">We listen, learn, and collaborate in making creative products. We craft every item with a personal touch, ensuring individuals, organisations, and companies who seek our services are fully satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUR DIVISIONS ===================== -->
+<section id="divisions" class="divisions-section">
+  <div class="section-heading">
+    <span class="section-tag">What We Create</span>
+    <h3 class="split-title">Four worlds, <span>one imagination</span></h3>
+  </div>
+  <div class="divisions-grid">
+    <article id="fashion" class="division-card">
+      <span class="division-numeral" aria-hidden="true">01</span>
+      <span class="division-code">LAKUNA</span>
+      <h4 class="division-title">Fashion</h4>
+      <ul class="division-list">
+        <li>Fashion Designs</li>
+        <li>Fashion Accessories</li>
+        <li>Interior Designs</li>
+        <li>Handmade Items</li>
+      </ul>
+    </article>
+    <article id="creative-products" class="division-card">
+      <span class="division-numeral" aria-hidden="true">02</span>
+      <span class="division-code">ORU</span>
+      <h4 class="division-title">Creative Products</h4>
+      <ul class="division-list">
+        <li>Customised Trophies</li>
+        <li>Appreciation Gifts</li>
+        <li>Name Boards/Signage</li>
+        <li>Company Accessories</li>
+      </ul>
+    </article>
+    <article id="arts-crafts" class="division-card">
+      <span class="division-numeral" aria-hidden="true">03</span>
+      <span class="division-code">DAYU</span>
+      <h4 class="division-title">Arts and Crafts</h4>
+      <ul class="division-list">
+        <li>Wood Engravings</li>
+        <li>Sculptures</li>
+        <li>Clay Products</li>
+        <li>3D Printed Designs</li>
+      </ul>
+    </article>
+    <article id="research-education" class="division-card">
+      <span class="division-numeral" aria-hidden="true">04</span>
+      <span class="division-code">BINDU</span>
+      <h4 class="division-title">Research and Education</h4>
+      <ul class="division-list">
+        <li>Publishing</li>
+        <li>Research and Development</li>
+        <li>Educational Activities</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
 <section id="product" class="product-range-section">
     <div class="range-header">
@@ -195,7 +322,7 @@
     </div>
 </section>
 
-<section class="shop-showcase-section">
+<section id="showcase" class="shop-showcase-section">
   <div class="showcase-container">
     
     <div class="showcase-card collections-card">
@@ -332,6 +459,123 @@
 </section>
 
 
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="services-section">
+  <div class="section-heading">
+    <span class="section-tag">What We Do</span>
+    <h3 class="split-title">Services and <span>Core Capabilities</span></h3>
+    <p class="section-intro">We offer a complete end-to-end process from design to production: physical production, printing, and distribution. By partnering with us, you will enjoy the following advantages and benefits.</p>
+  </div>
+
+  <div class="flow-strip">
+    <div class="flow-step"><span>01</span>Design</div>
+    <div class="flow-arrow" aria-hidden="true"></div>
+    <div class="flow-step"><span>02</span>Physical Production</div>
+    <div class="flow-arrow" aria-hidden="true"></div>
+    <div class="flow-step"><span>03</span>Printing</div>
+    <div class="flow-arrow" aria-hidden="true"></div>
+    <div class="flow-step"><span>04</span>Distribution</div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card service-wide">
+      <h4 class="service-title">Advantages &amp; Benefits</h4>
+      <ul class="capability-chips">
+        <li>Custom Designs</li>
+        <li>Material Fusion</li>
+        <li>Bespoke Agile Design</li>
+        <li>Advanced In-house Tech</li>
+        <li>Strict Project Timelines</li>
+        <li>Direct Material Sourcing</li>
+        <li>Eco-Friendly Mediums</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <span class="service-index">A</span>
+      <h4 class="service-title">Materials</h4>
+      <ul class="capability-list">
+        <li>Premium Natural Wood</li>
+        <li>High-Grade Optical Acrylic and Lucite</li>
+        <li>Brushed and Polished Metals</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <span class="service-index">B</span>
+      <h4 class="service-title">Techniques</h4>
+      <ul class="capability-list">
+        <li>Laser Engraving and Etching</li>
+        <li>UV Flatbed Printing</li>
+        <li>Subsurface Laser Carving</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <span class="service-index">C</span>
+      <h4 class="service-title">Prototyping</h4>
+      <ul class="capability-list">
+        <li>Creative and Prototype Designs</li>
+        <li>Rapid Prototyping</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXECUTION PROCESS ===================== -->
+<section id="process" class="process-section">
+  <div class="section-heading center">
+    <span class="section-tag">How We Work</span>
+    <h3 class="split-title">Execution <span>Process</span></h3>
+    <p class="section-intro">We strive to build a transparent and accountable communication process with our customers, enabling us to receive ongoing feedback and ensure the highest level of satisfaction.</p>
+  </div>
+
+  <div class="process-card">
+    <div class="process-orbit" aria-hidden="true">
+      <svg class="orbit-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38"></circle></svg>
+      <div class="orbit-hub">
+        <small>Core Focus</small>
+        <strong>Customer Feedback and Communication</strong>
+      </div>
+      <button type="button" class="orbit-node" style="--a:0.0deg" data-step="1" tabindex="-1">1</button>
+      <button type="button" class="orbit-node" style="--a:51.43deg" data-step="2" tabindex="-1">2</button>
+      <button type="button" class="orbit-node" style="--a:102.86deg" data-step="3" tabindex="-1">3</button>
+      <button type="button" class="orbit-node" style="--a:154.29deg" data-step="4" tabindex="-1">4</button>
+      <button type="button" class="orbit-node" style="--a:205.71deg" data-step="5" tabindex="-1">5</button>
+      <button type="button" class="orbit-node" style="--a:257.14deg" data-step="6" tabindex="-1">6</button>
+      <button type="button" class="orbit-node" style="--a:308.57deg" data-step="7" tabindex="-1">7</button>
+    </div>
+
+    <ol class="process-steps">
+      <li data-step="1" tabindex="0">
+        <span class="step-no">Step 1</span>
+        <div><h4>Customer Need</h4><p>Listening, Learning, and Collaboration</p></div>
+      </li>
+      <li data-step="2" tabindex="0">
+        <span class="step-no">Step 2</span>
+        <div><h4>Planning and Agreement</h4></div>
+      </li>
+      <li data-step="3" tabindex="0">
+        <span class="step-no">Step 3</span>
+        <div><h4>Prototype</h4></div>
+      </li>
+      <li data-step="4" tabindex="0">
+        <span class="step-no">Step 4</span>
+        <div><h4>Adjustment and Improvement</h4></div>
+      </li>
+      <li data-step="5" tabindex="0">
+        <span class="step-no">Step 5</span>
+        <div><h4>Production</h4></div>
+      </li>
+      <li data-step="6" tabindex="0">
+        <span class="step-no">Step 6</span>
+        <div><h4>Packaging and Delivery</h4></div>
+      </li>
+      <li data-step="7" tabindex="0">
+        <span class="step-no">Step 7</span>
+        <div><h4>Satisfaction</h4></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section id="about" class="about-contact-section">
   <div class="split-info-container">
     
@@ -344,10 +588,13 @@
       
       <div class="about-content-wrapper">
         <div class="about-visual">
-          <img src="About-Us-Image.png" alt="Precision wood crafting" class="about-img">
+          <img src="About-Us-Image.png" alt="Buddie and Eithie creative workspace" class="about-img">
         </div>
         <p class="about-description">
-          We bring raw, premium organic timber to life through micro-precision configurations. Blending intricate computational sacred geometry with ancestral hand-finishing routines, our work honors structural integrity while exploring deep design concepts.
+          Buddie and Eithie are dedicated to fostering imaginative and creative processes rooted in <span class="hl">experimentation</span> and <span class="hl">learning from mistakes</span>. We believe that embracing both experimentation and occasional missteps elevates the quality of our work.
+        </p>
+        <p class="about-description">
+          We are committed to delivering exceptional, customer-tailored creative products and designs that genuinely reflect our clients’ achievements and expectations, while maintaining strict timelines, competitive pricing, and uncompromising quality standards.
         </p>
       </div>
 
@@ -357,8 +604,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d35400" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
           </div>
           <div class="metric-text">
-            <h5>Craftsmanship</h5>
-            <p>Micro-precision geometry finish</p>
+            <h5>Experimentation</h5>
+            <p>Learning from every misstep</p>
           </div>
         </div>
         <div class="metric-glass-pill">
@@ -366,16 +613,16 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d35400" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
           <div class="metric-text">
-            <h5>Sustainability</h5>
-            <p>100% sourced premium timber</p>
+            <h5>Quality</h5>
+            <p>Strict timelines, fair pricing</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="split-card contact-card">
+    <div class="split-card contact-card" id="contact">
       <div class="contact-header-block">
-        <h3 class="split-title">Let’s <span>talk</span></h3>
+        <h3 class="split-title">Contact <span>Us</span></h3>
         <p class="contact-subtitle">Request a custom design quote or drop by our creative workspace.</p>
       </div>
 
@@ -420,15 +667,28 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               <p>No 585, Nawagamuwa South, Ranala, 10654 Sri Lanka</p>
             </div>
-            <div class="address-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-              <p>info@buddieandeithie.com</p>
-            </div>
-            <div class="address-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <p>+94 7070 45 000</p>
-            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="contact-people-grid">
+        <div class="person-card inquiry-card">
+          <span class="person-role">Inquiries</span>
+          <h5>General Inquiries</h5>
+          <p><strong>Email:</strong> <a href="mailto:info@buddieandeithie.com">info@buddieandeithie.com</a></p>
+          <p><strong>Mobile:</strong> <a href="tel:+94707045000">+94 7070 45 000</a></p>
+        </div>
+        <div class="person-card">
+          <div class="person-avatar">SD</div>
+          <h5>Mr Saman Kumara Dewagamage</h5>
+          <span class="person-role">Partner and Creative Director</span>
+          <p><strong>Email:</strong> <span class="fill-me">add email here</span></p>
+        </div>
+        <div class="person-card">
+          <div class="person-avatar">HW</div>
+          <h5>Ms Harshani Wilathgamuwage</h5>
+          <span class="person-role">Manager &ndash; Operations</span>
+          <p><strong>Email:</strong> <span class="fill-me">add email here</span></p>
         </div>
       </div>
 
@@ -471,19 +731,20 @@
       <h4>Company</h4>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#product">Pricing</a></li>
-        <li><a href="#product">Blog</a></li>
-        <li><a href="#product">Blog Details</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#about">Our Philosophy</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Execution Process</a></li>
       </ul>
     </div>
 
     <div class="footer-links-column">
-      <h4>Product</h4>
+      <h4>Explore</h4>
       <ul>
-        <li><a href="#product">Features</a></li>
-        <li><a href="#about">Careers</a></li>
-        <li><a href="#about">How it works</a></li>
+        <li><a href="#fashion">Fashion</a></li>
+        <li><a href="#creative-products">Creative Products</a></li>
+        <li><a href="#arts-crafts">Arts and Crafts</a></li>
+        <li><a href="#research-education">Research and Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>

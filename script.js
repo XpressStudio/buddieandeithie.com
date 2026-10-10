@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             menuLinks.forEach(item => item.classList.remove("active"));
             this.classList.add("active");
+            closeMobileMenu();
         });
     });
 
@@ -188,32 +189,109 @@ document.addEventListener('DOMContentLoaded', () => {
             track.style.transform = `translateX(0px)`;
         });
     }
-});
 
-// --- SCROLL INTERSECTION OBSERVER FOR BALANCED HIGHLIGHT ENGINE ---
-    const observedSections = document.querySelectorAll('#about, #contact');
-    const navItems = document.querySelectorAll('.glass-menu-bar .menu-link');
+    // --- MOBILE MENU TOGGLE (hamburger shows below 1100px) ---
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -60% 0px', // Evaluates items while passing through the mid-screen focus slot
-        threshold: 0
-    };
+    function closeMobileMenu() {
+        if (!mainMenu) return;
+        mainMenu.classList.remove('open');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    }
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navItems.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+    if (menuToggle && mainMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mainMenu.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        document.addEventListener('click', (e) => {
+            if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) closeMobileMenu();
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1100) closeMobileMenu();
+        });
+    }
+
+    // --- SCROLL SPY: highlights the matching menu link for the section in view ---
+    // [section id, menu href it should highlight (null = no menu item)]
+    const spyTargets = [
+        ['home', '#home'],
+        ['story', '#home'],
+        ['fashion', '#fashion'],
+        ['creative-products', '#creative-products'],
+        ['arts-crafts', '#arts-crafts'],
+        ['research-education', '#research-education'],
+        ['product', null],
+        ['showcase', null],
+        ['services', '#services'],
+        ['process', '#process'],
+        ['about', null],
+        ['contact', '#contact']
+    ];
+    const spyNavLinks = document.querySelectorAll('.glass-menu-bar .menu-link');
+    let spyTicking = false;
+
+    function updateScrollSpy() {
+        const refLine = window.innerHeight * 0.35;
+        let current = null;
+
+        spyTargets.forEach(([id, href]) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top;
+            // strict ">" keeps the first section when two cards share the same row
+            if (top <= refLine && (!current || top > current.top)) {
+                current = { top, href };
             }
         });
-    }, observerOptions);
 
-    observedSections.forEach(sec => {
-        if (sec) sectionObserver.observe(sec);
-    });
+        spyNavLinks.forEach(link => {
+            link.classList.toggle('active', !!current && current.href === link.getAttribute('href'));
+        });
+        spyTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!spyTicking) {
+            spyTicking = true;
+            requestAnimationFrame(updateScrollSpy);
+        }
+    }, { passive: true });
+    updateScrollSpy();
+
+    // --- EXECUTION PROCESS: orbit nodes and step list stay in sync ---
+    const stepNodes = document.querySelectorAll('.orbit-node');
+    const stepRows = document.querySelectorAll('.process-steps li');
+    let activeStep = 0;
+    let stepPaused = false;
+
+    function setStep(i) {
+        activeStep = i;
+        stepNodes.forEach((n, k) => n.classList.toggle('active', k === i));
+        stepRows.forEach((r, k) => r.classList.toggle('active', k === i));
+    }
+
+    if (stepNodes.length && stepRows.length) {
+        stepRows.forEach(row => {
+            const i = Number(row.dataset.step) - 1;
+            row.addEventListener('mouseenter', () => { stepPaused = true; setStep(i); });
+            row.addEventListener('mouseleave', () => { stepPaused = false; });
+            row.addEventListener('focus', () => { stepPaused = true; setStep(i); });
+            row.addEventListener('blur', () => { stepPaused = false; });
+            row.addEventListener('click', () => setStep(i));
+        });
+        stepNodes.forEach(node => {
+            const i = Number(node.dataset.step) - 1;
+            node.addEventListener('mouseenter', () => { stepPaused = true; setStep(i); });
+            node.addEventListener('mouseleave', () => { stepPaused = false; });
+        });
+
+        setStep(0);
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => {
+                if (!stepPaused) setStep((activeStep + 1) % stepNodes.length);
+            }, 3000);
+        }
+    }
+});
